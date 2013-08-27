@@ -1,0 +1,6 @@
+/.idea
+/nbactions.xml
+/target/
+/nb-configuration.xml
+/dynamicweb.iml
+/derby.log

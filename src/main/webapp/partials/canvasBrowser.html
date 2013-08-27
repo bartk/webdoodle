@@ -1,0 +1,9 @@
+<div ng-controller="CanvasBrowserController" ng-init="init()">
+    <div>
+        <div>{{canvas.name}}</div>
+        <img ng:src="{{contextPath}}/{{canvas.canvasImgSrc}}" class="canvasEditor shadow">
+        </canvas>
+        <div><a href="#/canvasList">Wróć</a></div>
+        <div><a ng-if="canvas.downloadable" href="{{contextPath}}/{{canvas.canvasImgSrc}}?download=true">Pobierz</a></div>
+    </div>
+</div>

@@ -1,0 +1,39 @@
+<div ng-controller="CanvasListController" ng-init="init()">
+    <form ng-submit="create()">
+        <table>
+            <tr>
+                <th>Nazwa</th>
+                <th>Szerokość</th>
+                <th>Wysokość</th>
+                <th>Operacje</th>
+            </tr>
+            <tr>
+                <td>
+                    <input type="text" size="30" placeholder="Nowy rysunek" ng-model="name" >                
+                </td>
+                <td>
+                    <input type="number" size="4" min="100" max="1000" placeholder="Szerokość" ng-model="width">                
+                </td>
+                <td>
+                    <input type="number" size="4" min="100" max="800" placeholder="Wysokość" ng-model="height">                
+                </td>
+                <td>
+                    <input type="submit" value="Utwórz">
+                </td>
+            </tr>
+            <tr ng-repeat="canvas in canvases" style="height: 60px;">
+                <td>{{canvas.name}}</td>
+                <td>{{canvas.width}}</td>
+                <td>{{canvas.height}}</td>
+                <td>
+                    <span ng-if="!canvas.closed"><a href="#/editor/{{canvas.id}}" >Dołącz</a><a href="" ng-click="close(canvas.id)">Zamknij</a></span>
+                    <span ng-if="canvas.closed">
+                        <a ng-if="canvas.thumbnailImgSrc != null"><img ng:src="{{contextPath}}/{{canvas.thumbnailImgSrc}}"></a>
+                        <a ng-if="canvas.downloadable" href="#/show/{{canvas.id}}">Pokaż</a>
+                        <a ng-if="canvas.downloadable" href="{{contextPath}}/{{canvas.canvasImgSrc}}?download=true">Pobierz</a>
+                    </span>
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>

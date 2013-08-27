@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema version="1.0"
+           elementFormDefault="qualified" 
+           targetNamespace="http://scubed.pl/webdoodle/XMLSchema" 
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:tns="http://scubed.pl/webdoodle/XMLSchema"
+           xmlns:jaxb="http://java.sun.com/xml/ns/jaxb"
+           xmlns:xjc="http://java.sun.com/xml/ns/jaxb/xjc"
+           jaxb:extensionBindingPrefixes="xjc" 
+           jaxb:version="2.1">
+   
+    
+    <xs:complexType name="TConfig">
+        <xs:sequence>
+            <xs:element name="contextPath" type="xs:string"></xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:element name="config" type="tns:TConfig"></xs:element>
+</xs:schema>

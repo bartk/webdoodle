@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema version="1.0"
+           elementFormDefault="qualified" 
+           targetNamespace="http://scubed.pl/webdoodle/XMLSchema" 
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:tns="http://scubed.pl/webdoodle/XMLSchema"
+           xmlns:jaxb="http://java.sun.com/xml/ns/jaxb"
+           xmlns:xjc="http://java.sun.com/xml/ns/jaxb/xjc"
+           jaxb:extensionBindingPrefixes="xjc" 
+           jaxb:version="2.1">
+   
+    
+    <xs:complexType name="TPixel">
+        <xs:sequence>
+            <xs:element name="canvasId" type="xs:long"></xs:element>
+            <xs:element name="x" type="xs:int"></xs:element>
+            <xs:element name="y" type="xs:int"></xs:element>
+            <xs:element name="color" type="xs:string"></xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:element name="pixel" type="tns:TPixel"></xs:element>
+</xs:schema>

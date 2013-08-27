@@ -1,0 +1,14 @@
+.main {width: 1200px; height: 850px; background-color: #93cac0}
+
+.canvasEditor {
+    border-style: solid; 
+    border-color: #000000;
+    border-radius: 10px;
+    border-width: 2px; 
+    background-color: white; 
+    cursor: crosshair; 
+}
+
+.shadow {box-shadow: 3px 3px 3px 3px #344E49; -moz-box-shadow: 3px 3px 3px 3px #344E49; -webkit-box-shadow: 3px 3px 3px 3px #344E49;}
+
+.canvasTable {overflow-y: scroll; height: 600px;}

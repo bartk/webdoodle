@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+
+<xs:schema version="1.0"
+           elementFormDefault="qualified" 
+           targetNamespace="http://scubed.pl/webdoodle/XMLSchema" 
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:tns="http://scubed.pl/webdoodle/XMLSchema"
+           xmlns:jaxb="http://java.sun.com/xml/ns/jaxb"
+           xmlns:xjc="http://java.sun.com/xml/ns/jaxb/xjc"
+           jaxb:extensionBindingPrefixes="xjc" 
+           jaxb:version="2.1">
+      
+    <xs:simpleType name="TName">
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TId">
+        <xs:restriction base="xs:long"/>
+    </xs:simpleType>
+    <xs:simpleType name="TGeomspec">
+        <xs:restriction base="xs:integer">
+            <xs:minInclusive value="1"/>
+            <xs:maxInclusive value="4096"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TWidth">
+        <xs:restriction base="tns:TGeomspec" xmlns:tns="http://scubed.pl/webdoodle/XMLSchema"/>
+    </xs:simpleType>
+    <xs:simpleType name="THeight">
+        <xs:restriction base="tns:TGeomspec" xmlns:tns="http://scubed.pl/webdoodle/XMLSchema"/>
+    </xs:simpleType>
+    <xs:complexType name="TCanvas">
+        <xs:sequence>
+            <xs:element name="id" type="tns:TId"></xs:element>
+            <xs:element name="name" type="tns:TName"></xs:element>
+            <xs:element name="width" type="tns:TWidth"></xs:element>
+            <xs:element name="height" type="tns:THeight"></xs:element>
+            <xs:element name="closed" type="tns:TClosed"></xs:element>
+            <xs:element name="thumbnailImgSrc" type="xs:string"></xs:element>
+            <xs:element name="canvasImgSrc" type="xs:string"></xs:element>
+            <xs:element name="downloadable" type="xs:boolean"></xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:simpleType name="TClosed">
+        <xs:restriction base="xs:boolean"/>
+    </xs:simpleType>
+    <xs:element name="canvas" type="tns:TCanvas"></xs:element>
+</xs:schema>
