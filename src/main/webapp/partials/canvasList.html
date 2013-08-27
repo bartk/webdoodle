@@ -2,23 +2,23 @@
     <form ng-submit="create()">
         <table>
             <tr>
-                <th>Nazwa</th>
-                <th>Szerokość</th>
-                <th>Wysokość</th>
-                <th>Operacje</th>
+                <th>Name</th>
+                <th>Width</th>
+                <th>Height</th>
+                <th></th>
             </tr>
             <tr>
                 <td>
-                    <input type="text" size="30" placeholder="Nowy rysunek" ng-model="name" >                
+                    <input type="text" size="30" placeholder="Name" ng-model="name" >                
                 </td>
                 <td>
-                    <input type="number" size="4" min="100" max="1000" placeholder="Szerokość" ng-model="width">                
+                    <input type="number" size="4" min="100" max="1000" placeholder="Width" ng-model="width">                
                 </td>
                 <td>
-                    <input type="number" size="4" min="100" max="800" placeholder="Wysokość" ng-model="height">                
+                    <input type="number" size="4" min="100" max="800" placeholder="Height" ng-model="height">                
                 </td>
                 <td>
-                    <input type="submit" value="Utwórz">
+                    <input type="submit" value="New doodle">
                 </td>
             </tr>
             <tr ng-repeat="canvas in canvases" style="height: 60px;">
@@ -26,11 +26,11 @@
                 <td>{{canvas.width}}</td>
                 <td>{{canvas.height}}</td>
                 <td>
-                    <span ng-if="!canvas.closed"><a href="#/editor/{{canvas.id}}" >Dołącz</a><a href="" ng-click="close(canvas.id)">Zamknij</a></span>
+                    <span ng-if="!canvas.closed"><a href="#/editor/{{canvas.id}}" >Join</a><a href="" ng-click="close(canvas.id)">Close</a></span>
                     <span ng-if="canvas.closed">
                         <a ng-if="canvas.thumbnailImgSrc != null"><img ng:src="{{contextPath}}/{{canvas.thumbnailImgSrc}}"></a>
-                        <a ng-if="canvas.downloadable" href="#/show/{{canvas.id}}">Pokaż</a>
-                        <a ng-if="canvas.downloadable" href="{{contextPath}}/{{canvas.canvasImgSrc}}?download=true">Pobierz</a>
+                        <a ng-if="canvas.downloadable" href="#/show/{{canvas.id}}">Show</a>
+                        <a ng-if="canvas.downloadable" href="{{contextPath}}/{{canvas.canvasImgSrc}}?download=true">Download</a>
                     </span>
                 </td>
             </tr>
