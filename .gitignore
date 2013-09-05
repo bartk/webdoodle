@@ -4,3 +4,6 @@
 /nb-configuration.xml
 /dynamicweb.iml
 /derby.log
+.classpath
+.project
+.settings/
